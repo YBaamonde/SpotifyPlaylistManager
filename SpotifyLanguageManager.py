@@ -4,16 +4,18 @@ import cohere
 from datetime import datetime
 
 # Configuración de la autenticación de Spotify
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="e4611d173ea44533b0428165130dc74b",
-                                               client_secret="eef085421bda4796abaae8aab584e70b",
-                                               redirect_uri="http://localhost:8888/callback",
-                                               scope="playlist-modify-public playlist-modify-private"))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+    client_id="TU_CLIENT_ID",
+    client_secret="TU_CLIENT_SECRET",
+    redirect_uri="TU_REDIRECT_URI",
+    scope="playlist-modify-public playlist-modify-private"
+))
 
 # Configuración de la API de Cohere
-co = cohere.Client('hUajC9SBi0oVvd5HfV2ppodHTY69z42QpLfLJiEh')
+co = cohere.Client('Cohere_API_KEY')
 
 # ID de la playlist
-playlist_id = "5Vh1d7bxXyJBfrZItTb9AK"
+playlist_id = "PLAYLIST_ID"
 
 # Lista para almacenar las canciones eliminadas
 deleted_tracks = []

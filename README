@@ -24,11 +24,11 @@ Una vez configurado, ejecuta la aplicación y sigue las instrucciones en pantall
 
 ### 2. SpotifyDateManager
 
-Esta aplicación identifica y elimina canciones en una playlist de Spotify que fueron lanzadas después del año 2015. Similar a la aplicación anterior, permite al usuario seleccionar cuáles desea conservar y elimina las demás, registrando las eliminaciones en un archivo de log.
+Esta aplicación identifica y elimina canciones en una playlist de Spotify que fueron lanzadas después del año 2010. Similar a la aplicación anterior, permite al usuario seleccionar cuáles desea conservar y elimina las demás, registrando las eliminaciones en un archivo de log.
 
 #### Funcionamiento
-- **Filtrado por año**: Utiliza los metadatos de Spotify para determinar la fecha de lanzamiento de cada canción. Solo las canciones lanzadas después de 2015 se muestran al usuario.
-- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones encontradas que fueron lanzadas después de 2015, junto con el año de lanzamiento. El usuario puede seleccionar las canciones que NO quiere eliminar.
+- **Filtrado por año**: Utiliza los metadatos de Spotify para determinar la fecha de lanzamiento de cada canción. Solo las canciones lanzadas después de 2010 se muestran al usuario.
+- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones encontradas que fueron lanzadas después de 2010, junto con el año de lanzamiento. El usuario puede seleccionar las canciones que NO quiere eliminar.
 - **Eliminación y registro**: Las canciones no seleccionadas se eliminan y se guarda un registro de las eliminadas en un archivo de log con la fecha y hora de la operación.
 
 #### Configuración
@@ -37,7 +37,7 @@ Esta aplicación identifica y elimina canciones en una playlist de Spotify que f
 3. Asegúrate de que los **scopes** (`playlist-modify-public` y `playlist-modify-private`) estén configurados correctamente.
 
 #### Ejecución
-Ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y eliminar canciones lanzadas después de 2015.
+Ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y eliminar canciones lanzadas después de 2010.
 
 ## Requisitos
 - Python 3.x
