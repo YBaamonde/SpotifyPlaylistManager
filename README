@@ -10,13 +10,13 @@ Esta aplicación detecta canciones en español dentro de una playlist de Spotify
 
 #### Funcionamiento
 - **Detección de idioma**: Se utiliza la API de Cohere para analizar el título de la canción y el nombre del artista y determinar si la canción está en español.
-- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones en español encontradas. El usuario puede seleccionar las canciones que NO quiere eliminar mediante la introducción de sus números separados por comas.
+- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones en español encontradas. El usuario puede seleccionar las canciones que **NO** quiere eliminar mediante la introducción de sus números separados por comas.
 - **Eliminación y registro**: Las canciones no seleccionadas se eliminan y se guarda un registro de las eliminadas en un archivo de log con la fecha y hora de la operación.
 
 #### Configuración
 1. Obtén tus credenciales de Spotify (Client ID y Client Secret) y configura una redirección (`redirect_uri`).
 2. Regístrate en Cohere y obtén tu API Key.
-3. Ajusta las variables `client_id`, `client_secret`, `redirect_uri`, y `api_key` en el código.
+3. Ajusta las variables `client_id`, `client_secret`, `redirect_uri` y `api_key` en el código.
 4. Asegúrate de que los **scopes** necesarios (`playlist-modify-public` y `playlist-modify-private`) estén configurados para tu aplicación en el [Dashboard de Spotify](https://developer.spotify.com/dashboard/).
 
 #### Ejecución
@@ -28,7 +28,7 @@ Esta aplicación identifica y elimina canciones en una playlist de Spotify que f
 
 #### Funcionamiento
 - **Filtrado por año**: Utiliza los metadatos de Spotify para determinar la fecha de lanzamiento de cada canción. Solo las canciones lanzadas después de 2010 se muestran al usuario.
-- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones encontradas que fueron lanzadas después de 2010, junto con el año de lanzamiento. El usuario puede seleccionar las canciones que NO quiere eliminar.
+- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones encontradas que fueron lanzadas después de 2010, junto con el año de lanzamiento. El usuario puede seleccionar las canciones que **NO** quiere eliminar.
 - **Eliminación y registro**: Las canciones no seleccionadas se eliminan y se guarda un registro de las eliminadas en un archivo de log con la fecha y hora de la operación.
 
 #### Configuración
@@ -47,6 +47,6 @@ Ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y 
 - Una cuenta de desarrollador en Spotify con las credenciales de API configuradas.
 - Una cuenta en Cohere (solo para la aplicación de canciones en español).
 
-[!NOTE]
-- Ambas aplicaciones guardan un registro de las canciones eliminadas en un archivo llamado `deleted_tracks.log` en el directorio de trabajo.
-- La eliminación de canciones de una playlist requiere permisos específicos. Asegúrate de que tu aplicación de Spotify tenga configurados los scopes adecuados y que los tokens de acceso estén actualizados.
+> **Nota:**
+> - Ambas aplicaciones guardan un registro de las canciones eliminadas en un archivo llamado `deleted_tracks.log` en el directorio de trabajo.
+> - La eliminación de canciones de una playlist requiere permisos específicos. Asegúrate de que tu aplicación de Spotify tenga configurados los scopes adecuados y que los tokens de acceso estén actualizados.
