@@ -1,0 +1,52 @@
+# Spotify Playlist Manager
+
+Este repositorio contiene dos aplicaciones diseñadas para gestionar canciones en playlists de Spotify de manera automatizada. Las aplicaciones se centran en identificar canciones basadas en criterios específicos y permitir al usuario eliminarlas de la playlist si así lo desea, manteniendo un registro de las canciones eliminadas.
+
+## Aplicaciones Disponibles
+
+### 1. SpotifyLanguageManager
+
+Esta aplicación detecta canciones en español dentro de una playlist de Spotify. El usuario puede visualizar todas las canciones identificadas como en español y seleccionar cuáles desea conservar. Las canciones que no se seleccionan se eliminan de la playlist.
+
+#### Funcionamiento
+- **Detección de idioma**: Se utiliza la API de Cohere para analizar el título de la canción y el nombre del artista y determinar si la canción está en español.
+- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones en español encontradas. El usuario puede seleccionar las canciones que NO quiere eliminar mediante la introducción de sus números separados por comas.
+- **Eliminación y registro**: Las canciones no seleccionadas se eliminan y se guarda un registro de las eliminadas en un archivo de log con la fecha y hora de la operación.
+
+#### Configuración
+1. Obtén tus credenciales de Spotify (`Client ID` y `Client Secret`) y configura una redirección (`redirect_uri`).
+2. Regístrate en Cohere y obtén tu `API Key`.
+3. Ajusta las variables `client_id`, `client_secret`, `redirect_uri`, y `api_key` en el código.
+4. Asegúrate de que los `scopes` necesarios (`playlist-modify-public` y `playlist-modify-private`) estén configurados para tu aplicación en el [Dashboard de Spotify](https://developer.spotify.com/dashboard/).
+
+#### Ejecución
+Una vez configurado, ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y eliminar canciones en español de la playlist.
+
+### 2. SpotifyDateManager
+
+Esta aplicación identifica y elimina canciones en una playlist de Spotify que fueron lanzadas después del año 2010. Similar a la aplicación anterior, permite al usuario seleccionar cuáles desea conservar y elimina las demás, registrando las eliminaciones en un archivo de log.
+
+#### Funcionamiento
+- **Filtrado por año**: Utiliza los metadatos de Spotify para determinar la fecha de lanzamiento de cada canción. Solo las canciones lanzadas después de 2010 se muestran al usuario.
+- **Interacción con el usuario**: Se muestra una lista numerada de todas las canciones encontradas que fueron lanzadas después de 2010, junto con el año de lanzamiento. El usuario puede seleccionar las canciones que NO quiere eliminar.
+- **Eliminación y registro**: Las canciones no seleccionadas se eliminan y se guarda un registro de las eliminadas en un archivo de log con la fecha y hora de la operación.
+
+#### Configuración
+1. Utiliza las mismas credenciales de Spotify (`Client ID`, `Client Secret` y `redirect_uri`) que en la primera aplicación.
+2. Ajusta las variables necesarias en el código.
+3. Asegúrate de que los `scopes` (`playlist-modify-public` y `playlist-modify-private`) estén configurados correctamente.
+
+#### Ejecución
+Ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y eliminar canciones lanzadas después de 2010.
+
+## Requisitos
+- Python 3.x
+- Bibliotecas de Python:
+  - `spotipy`
+  - `cohere` (solo para la aplicación de canciones en español)
+- Una cuenta de desarrollador en Spotify con las credenciales de API configuradas.
+- Una cuenta en Cohere (solo para la aplicación de canciones en español).
+
+> **Note**  
+> - Ambas aplicaciones guardan un registro de las canciones eliminadas en un archivo llamado `deleted_tracks.log` en el directorio de trabajo.  
+> - La eliminación de canciones de una playlist requiere permisos específicos. Asegúrate de que tu aplicación de Spotify tenga configurados los `scopes` adecuados y que los tokens de acceso estén actualizados.
