@@ -47,6 +47,6 @@ Ejecuta la aplicación y sigue las instrucciones en pantalla para identificar y 
 - Una cuenta de desarrollador en Spotify con las credenciales de API configuradas.
 - Una cuenta en Cohere (solo para la aplicación de canciones en español).
 
-## Notas
+[!NOTE]
 - Ambas aplicaciones guardan un registro de las canciones eliminadas en un archivo llamado `deleted_tracks.log` en el directorio de trabajo.
 - La eliminación de canciones de una playlist requiere permisos específicos. Asegúrate de que tu aplicación de Spotify tenga configurados los scopes adecuados y que los tokens de acceso estén actualizados.
